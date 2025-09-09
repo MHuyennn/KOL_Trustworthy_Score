@@ -1,7 +1,7 @@
 import pandas as pd
 
 # Đọc file Excel với tất cả các sheet
-excel_file = "KOL.xlsx"
+excel_file = "Raw_Data.xlsx"
 sheets = pd.read_excel(excel_file, sheet_name=["Profiles", "Products", "Posts", "Comments", "Scandals"])
 
 # Gán các DataFrame từ các sheet
@@ -31,7 +31,7 @@ for col in string_columns:
     merged_df[col] = merged_df[col].fillna('')
 
 # Lưu vào file CSV
-output_csv = 'KOL_dataset.csv'
+output_csv = 'KOL_Dataset.csv'
 merged_df.to_csv(output_csv, index=False, encoding='utf-8')
 
 # In thông báo hoàn thành
